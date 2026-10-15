@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Free | GACEB Scholar</title>
+  <meta name="description" content="Create your free GACEB Scholar account. Upload notes, earn coins and access premium resources.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="account-page">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="gaceb-scholar-logo.png" alt="GACEB Scholar">
+        <div>
+          <strong>GACEB</strong>
+          <span>SCHOLAR</span>
+        </div>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="sciences.html">Sciences</a>
+        <a href="arts.html">Arts</a>
+        <a href="about.html">About Us</a>
+        <a href="account.html" class="btn-nav">Join Free</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="account-hero">
+      <div class="container account-layout">
+        
+        <!-- Left side – Benefits -->
+        <div class="account-benefits">
+          <p class="eyebrow">Join GACEB Scholar</p>
+          <h1>Start learning<br>with purpose</h1>
+          <p class="lead">Create a free account to upload study materials, earn coins and unlock exclusive resources.</p>
+          
+          <ul class="benefits-list">
+            <li>
+              <span class="benefit-icon">📚</span>
+              <div>
+                <strong>Upload & Share</strong>
+                <p>Share notes and past papers with the community</p>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-icon">🪙</span>
+              <div>
+                <strong>Earn Coins</strong>
+                <p>Get rewarded when your materials are approved</p>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-icon">🔓</span>
+              <div>
+                <strong>Unlock Resources</strong>
+                <p>Use coins to access premium practice sets</p>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-icon">📈</span>
+              <div>
+                <strong>Track Progress</strong>
+                <p>See your uploads and coin activity</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right side – Form -->
+        <div class="account-form-card">
+          <div id="authBox">
+            <div class="auth-tabs" id="authTabs">
+              <button type="button" data-t="signup" class="active">Create Account</button>
+              <button type="button" data-t="signin">Sign In</button>
+            </div>
+
+            <!-- Sign Up -->
+            <form id="signupForm" class="auth-form" novalidate>
+              <div class="form-row">
+                <label>I am a
+                  <select name="role">
+                    <option>Student</option>
+                    <option>Teacher</option>
+                  </select>
+                </label>
+                <label>Level
+                  <select name="level">
+                    <option>O-Level</option>
+                    <option>A-Level</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>Full Name
+                <input type="text" name="name" required placeholder="Your full name">
+              </label>
+
+              <label>Email Address
+                <input type="email" name="email" required placeholder="you@example.com">
+              </label>
+
+              <label>School (optional)
+                <input type="text" name="school" placeholder="Your school name">
+              </label>
+
+              <label>Password (min. 8 characters)
+                <input type="password" name="pw" required minlength="8" placeholder="••••••••">
+              </label>
+
+              <label>Confirm Password
+                <input type="password" name="pw2" required placeholder="••••••••">
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" name="minor"> I am under 18
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" name="guardian"> Parent / guardian / school agrees
+              </label>
+
+              <label class="checkbox">
+                <input type="checkbox" name="terms" required> I agree to the privacy notice
+              </label>
+
+              <p class="error" id="signupErr"></p>
+              <button type="submit" class="btn btn-primary full">Create Free Account</button>
+            </form>
+
+            <!-- Sign In -->
+            <form id="signinForm" class="auth-form" hidden novalidate>
+              <label>Email Address
+                <input type="email" name="email" required placeholder="you@example.com">
+              </label>
+              <label>Password
+                <input type="password" name="pw" required placeholder="••••••••">
+              </label>
+              <p class="error" id="signinErr"></p>
+              <button type="submit" class="btn btn-primary full">Sign In</button>
+            </form>
+          </div>
+
+          <!-- Dashboard (shown after login) -->
+          <div id="dash" class="dashboard" hidden>
+            <div class="wallet">
+              <div>
+                <p class="eyebrow">My Account</p>
+                <h3 id="hello">Welcome</h3>
+                <p class="muted" id="roleLine"></p>
+              </div>
+              <div class="balance">
+                <strong id="coins">0</strong>
+                <span>coins</span>
+              </div>
+            </div>
+            <button id="signOut" class="btn-outline-dark full">Sign Out</button>
+            
+            <div class="dash-tabs" id="dashTabs" style="margin-top:24px;">
+              <button data-p="p-up" class="active">Upload</button>
+              <button data-p="p-mine">My Uploads</button>
+              <button data-p="p-svc">Use Coins</button>
+              <button data-p="p-log">Activity</button>
+            </div>
+            <div class="panel" id="p-up">
+              <p class="earn-note">Upload notes and practice materials to earn coins after review.</p>
+            </div>
+            <div class="panel" id="p-mine" hidden></div>
+            <div class="panel" id="p-svc" hidden></div>
+            <div class="panel" id="p-log" hidden></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <strong>GACEB Scholar</strong>
+      <p>Owned by Sr. Gauge and Sr. Calliper</p>
+      <p class="copyright">© 2026 GACEB Scholar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="config.js"></script>
+  <script src="account-server.js"></script>
+</body>
+</html>
